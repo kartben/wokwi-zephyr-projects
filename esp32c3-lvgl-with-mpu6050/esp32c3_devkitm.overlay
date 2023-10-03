@@ -5,6 +5,15 @@
 
 	aliases {
 		accel0 =&mpu6050;
+		led0 = &led0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led0: led0 {
+			label = "LED0";
+			gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+		};
 	};
 };
 
