@@ -1,15 +1,44 @@
-# esp32c3-lvgl-with-mpu6050
+# esp32c3-blinky
 
-This is a Wokwi demo project for ESP32-C3 DevkitM + ILI9341 + MPU6050.
+This is a Wokwi demo project for ESP32-C3 running Zephyr Blinky.
 
-This contains the binary files corresponding to the demo available at:
-https://github.com/zephyrproject-rtos/zephyr/pull/63375 (hopefully soon merged upstream).
+Default sample has been ever so slightly modified to `print` info re: timing of the LED toggles.
+
+```c
+int main(void)
+{
+	int ret;
+	bool led_state = false;
+
+	if (!gpio_is_ready_dt(&led)) {
+		return 0;
+	}
+
+	ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_INACTIVE);
+	if (ret < 0) {
+		return 0;
+	}
+
+
+	while (1) {
+		ret = gpio_pin_toggle_dt(&led);
+		if (ret < 0) {
+			return 0;
+		}
+
+		led_state = !led_state;
+		printf("LED state: %s @ %lld\n", led_state ? "ON" : "OFF", k_uptime_get());
+		k_msleep(SLEEP_TIME_MS);
+	}
+	return 0;
+}
+```
 
 To build the code yourself (assuming you're running from a Zephyr workspace containing the PR
 above):
 
 ```bash
-west build -p auto -b esp32c3_devkitm .\samples\modules\lvgl\accelerometer_chart\ -- \
+west build -p auto -b esp32c3_devkitm ./samples/basic/blinky -- \
      -DDTC_OVERLAY_FILE="<PATH_TO>/esp32c3_devkitm.overlay" \
      -DEXTRA_CONF_FILE="<PATH_TO>/esp32c3_devkitm.conf"
 ```
