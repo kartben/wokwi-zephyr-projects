@@ -10,6 +10,6 @@ above):
 
 ```bash
 west build -p auto -b esp32c3_devkitm .\samples\modules\lvgl\accelerometer_chart\ -- \
-     -DDTC_OVERLAY_FILE="<PATH_TO>/esp32c3_devkitm.overlay" \
-     -DEXTRA_CONF_FILE="<PATH_TO>/esp32c3_devkitm.conf"
+     -DDTC_OVERLAY_FILE="<xxx>/boards/esp32c3_devkitm.overlay" \
+     -DEXTRA_CONF_FILE="<xxx>/boards/esp32c3_devkitm.conf"
 ```
