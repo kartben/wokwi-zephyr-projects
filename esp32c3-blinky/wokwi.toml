@@ -1,0 +1,5 @@
+[wokwi]
+version = 1
+elf = "./zephyr.elf"
+firmware = "./zephyr.bin"
+#rfc2217ServerPort = 4000

@@ -1,0 +1,37 @@
+/ {
+	chosen {
+		zephyr,display = &ili9341;
+	};
+
+	aliases {
+		accel0 =&mpu6050;
+		led0 = &led0;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		led0: led0 {
+			label = "LED0";
+			gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+		};
+	};
+};
+
+&i2c0 {
+	mpu6050: mpu6050@68 {
+		compatible = "invensense,mpu6050";
+		reg = <0x68>;
+		status = "okay";
+	};
+};
+
+&spi2 {
+	ili9341: ili9341@0 {
+		compatible = "ilitek,ili9341";
+		cmd-data-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>;
+		reg = <0x0 >;
+		spi-max-frequency = <25000000>;
+		width = <240>;
+		height = <320>;
+	};
+};

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "author": "Kirill Mikhailov [playfulFence]",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-c3-devkitm-1", "id": "esp", "top": -278.7, "left": 44.22, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -426, "left": 301.4, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "esp:GND.10", "green", [ "v0" ] ],
+    [ "led1:A", "esp:8", "green", [ "v0" ] ]
+  ],
+  "serialMonitor": { "display": "terminal" },
+  "dependencies": {}
+}
