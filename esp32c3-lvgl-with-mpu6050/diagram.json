@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Kirill Mikhailov [playfulFence]",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-c3-devkitm-1", "id": "esp", "top": -278.7, "left": 44.22, "attrs": {} },
+    {
+      "type": "wokwi-ili9341",
+      "id": "lcd1",
+      "top": -352.4,
+      "left": -360.1,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 3.82, "left": -45.68, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:7", "lcd1:MOSI", "white", [ "h25.67", "v-115.2", "h-258.49", "v95.99" ] ],
+    [ "esp:10", "lcd1:CS", "green", [ "h-76.8", "v-19.2" ] ],
+    [ "esp:0", "lcd1:D/C", "purple", [ "h-57.6", "v-19.2" ] ],
+    [ "esp:6", "lcd1:SCK", "blue", [ "h39.74", "v-144", "h-291.76", "v105.59" ] ],
+    [ "esp:2", "lcd1:MISO", "red", [ "h-124.8", "v-9.61" ] ],
+    [ "esp:GND.1", "lcd1:GND", "black", [ "v-0.77", "h-115.2", "v87.17" ] ],
+    [ "esp:3V3.1", "lcd1:VCC", "limegreen", [ "h-96", "v86.4" ] ],
+    [ "imu1:VCC", "esp:5V.2", "red", [ "v0" ] ],
+    [ "imu1:GND", "esp:GND.5", "black", [ "v0" ] ],
+    [ "imu1:SDA", "esp:1", "yellow", [ "v-182.4", "h48.08" ] ],
+    [ "imu1:SCL", "esp:3", "orange", [ "v0" ] ]
+  ],
+  "serialMonitor": { "display": "terminal" },
+  "dependencies": {}
+}
