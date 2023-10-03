@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Benjamin Cabé",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": -57.78,
+      "left": -91.43,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -61.2, "left": -217, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "led1:A", "esp:8", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
