@@ -1,6 +1,6 @@
 # esp32s3-lvgl-with-mpu6050
 
-This is a Wokwi demo project for ESP32-C3 DevkitM + ILI9341 + MPU6050.
+This is a Wokwi demo project for ESP32-S3 DevkitM + ILI9341 + MPU6050.
 
 This contains the binary files corresponding to the demo available at:
 https://github.com/zephyrproject-rtos/zephyr/pull/63375 (hopefully soon merged upstream).
