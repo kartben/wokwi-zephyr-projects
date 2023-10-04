@@ -28,9 +28,11 @@
 };
 
 &spi2 {
+	status = "okay";
+
 	ili9341: ili9341@0 {
 		compatible = "ilitek,ili9341";
-		cmd-data-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>;
+		cmd-data-gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
 		reg = <0x0 >;
 		spi-max-frequency = <25000000>;
 		width = <240>;
