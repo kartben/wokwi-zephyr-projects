@@ -4,15 +4,22 @@
   "editor": "wokwi",
   "parts": [
     { "type": "board-esp32-c3-devkitm-1", "id": "esp", "top": -278.7, "left": 44.22, "attrs": {} },
-    { "type": "wokwi-mpu6050", "id": "imu1", "top": 3.82, "left": -45.68, "attrs": {} }
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": -217.58,
+      "left": -113.72,
+      "rotate": 90,
+      "attrs": {}
+    }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
     [ "esp:RX", "$serialMonitor:TX", "", [] ],
-    [ "imu1:VCC", "esp:5V.2", "red", [ "v0" ] ],
-    [ "imu1:GND", "esp:GND.5", "black", [ "v0" ] ],
-    [ "imu1:SDA", "esp:1", "yellow", [ "v-182.4", "h48.08" ] ],
-    [ "imu1:SCL", "esp:3", "orange", [ "v0" ] ]
+    [ "imu1:VCC", "esp:5V.2", "red", [ "h48", "v19.28" ] ],
+    [ "imu1:GND", "esp:GND.5", "black", [ "h38.4", "v38.48" ] ],
+    [ "imu1:SDA", "esp:1", "yellow", [ "h57.6", "v9.68" ] ],
+    [ "imu1:SCL", "esp:3", "orange", [ "v0.08", "h48", "v-48" ] ]
   ],
   "serialMonitor": { "display": "terminal" },
   "dependencies": {}
