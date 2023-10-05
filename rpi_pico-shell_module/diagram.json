@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "author": "Benjamin Cabé",
+  "editor": "wokwi",
+  "parts": [ { "type": "wokwi-pi-pico", "id": "pico", "top": 0, "left": 0, "attrs": {} } ],
+  "connections": [ [
+    "pico:GP0", "$serialMonitor:RX", "", [] ], [
+      "pico:GP1", "$serialMonitor:TX", "", [] ] ],
+  "serialMonitor": { "display": "terminal" },
+  "dependencies": {}
+}
