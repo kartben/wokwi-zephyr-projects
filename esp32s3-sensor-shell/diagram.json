@@ -27,5 +27,6 @@
     [ "imu1:SCL", "esp:2", "yellow", [ "h-38.4", "v76.72" ] ],
     [ "imu1:SDA", "esp:1", "white", [ "h-28.8", "v67.12" ] ]
   ],
+  "serialMonitor": { "display": "terminal" },
   "dependencies": {}
 }
