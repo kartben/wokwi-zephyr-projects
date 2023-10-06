@@ -41,7 +41,7 @@
 	lvgl_encoder_input {
 		compatible = "zephyr,lvgl-encoder-input";
 		rotation-input-code = <INPUT_REL_WHEEL>;
-		button-input-code = <INPUT_KEY_ENTER>;
+		button-input-code = <INPUT_KEY_A>;
 	};
 
 	qdec {
