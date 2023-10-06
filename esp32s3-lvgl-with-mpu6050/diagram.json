@@ -8,7 +8,7 @@
       "id": "esp",
       "top": -28.98,
       "left": -120.23,
-      "attrs": {}
+      "attrs": {"__labs_spiAccel": "1"}
     },
     {
       "type": "wokwi-mpu6050",
