@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "Benjamin Cabé",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": -28.98,
+      "left": -120.23,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": -64.22,
+      "left": 12.52,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "lcd1",
+      "top": -16.4,
+      "left": -475.3,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 140.6,
+      "left": 48,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "imu1:VCC", "esp:3V3.1", "red", [ "h-172.8", "v9.52" ] ],
+    [ "imu1:GND", "esp:GND.1", "black", [ "h-163.2", "v9.52" ] ],
+    [ "imu1:SCL", "esp:2", "yellow", [ "h-38.4", "v76.72" ] ],
+    [ "imu1:SDA", "esp:1", "white", [ "h-28.8", "v67.12" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h38.4", "v38.4" ] ],
+    [ "lcd1:D/C", "esp:14", "purple", [ "h48", "v57.6" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "h28.8", "v19.2" ] ],
+    [ "lcd1:CS", "esp:10", "green", [ "h38.4", "v-9.6" ] ],
+    [ "lcd1:MOSI", "esp:11", "white", [ "h105.6", "v28.81" ] ],
+    [ "lcd1:SCK", "esp:12", "blue", [ "h76.8", "v48.01" ] ],
+    [ "lcd1:MISO", "esp:13", "red", [ "h57.6", "v76.81" ] ],
+    [ "btn1:2.l", "esp:GND.4", "black", [ "h-28.8", "v29" ] ],
+    [ "btn1:1.l", "esp:36", "green", [ "h-28.8", "v-38.4" ] ]
+  ],
+  "serialMonitor": { "display": "terminal" },
+  "dependencies": {}
+}

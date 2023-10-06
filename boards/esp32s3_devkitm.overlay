@@ -1,3 +1,5 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 / {
 	chosen {
 		zephyr,display = &ili9341;
@@ -6,6 +8,8 @@
 	aliases {
 		accel0 =&mpu6050;
 		led0 = &led0;
+		qdec0 = &pcnt;
+		sw0 = &button0;
 	};
 
 	leds {
@@ -13,6 +17,49 @@
 		led0: led0 {
 			label = "LED0";
 			gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	/* Buttons */
+	buttons: buttons {
+		compatible = "gpio-keys";
+
+		button0 {
+			label = "BUTTON0";
+			gpios = <&gpio0 36 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			zephyr,code = <INPUT_KEY_A>;
+		};
+	};
+
+	lvgl_button_input {
+		compatible = "zephyr,lvgl-button-input";
+		input = <&buttons>;
+		input-codes = <INPUT_KEY_A>;
+		coordinates = <160 120>;
+	};
+
+	lvgl_encoder_input {
+		compatible = "zephyr,lvgl-encoder-input";
+		rotation-input-code = <INPUT_REL_WHEEL>;
+		button-input-code = <INPUT_KEY_ENTER>;
+	};
+
+	qdec {
+		compatible = "gpio-qdec";
+		gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>, <&gpio0 5 GPIO_ACTIVE_HIGH>;
+		steps-per-period = <4>;
+		zephyr,axis = <INPUT_REL_WHEEL>;
+		sample-time-us = <2000>;
+		idle-timeout-ms = <200>;
+	};
+};
+
+&pinctrl {
+	pcnt_default: pcnt_default {
+		group1 {
+			pinmux = <PCNT0_CH0SIG_GPIO20>,
+				<PCNT0_CH0CTRL_GPIO21>;
+			bias-pull-up;
 		};
 	};
 };
