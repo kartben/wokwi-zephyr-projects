@@ -18,21 +18,7 @@
       "rotate": 270,
       "attrs": {}
     },
-    {
-      "type": "wokwi-ili9341",
-      "id": "lcd1",
-      "top": -16.4,
-      "left": -475.3,
-      "rotate": 270,
-      "attrs": {}
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "btn1",
-      "top": 140.6,
-      "left": 48,
-      "attrs": { "color": "green" }
-    },
+    { "type": "wokwi-ili9341", "id": "lcd1", "top": -172, "left": -537.9, "attrs": {} },
     { "type": "wokwi-ky-040", "id": "encoder1", "top": -84.7, "left": -336.8, "attrs": {} }
   ],
   "connections": [
@@ -42,15 +28,13 @@
     [ "imu1:GND", "esp:GND.1", "black", [ "h-163.2", "v9.52" ] ],
     [ "imu1:SCL", "esp:2", "yellow", [ "h-38.4", "v76.72" ] ],
     [ "imu1:SDA", "esp:1", "white", [ "h-28.8", "v67.12" ] ],
-    [ "lcd1:GND", "esp:GND.1", "black", [ "h38.4", "v38.4" ] ],
-    [ "lcd1:D/C", "esp:14", "purple", [ "h48", "v57.6" ] ],
-    [ "lcd1:VCC", "esp:5V", "red", [ "h28.8", "v19.2" ] ],
-    [ "lcd1:CS", "esp:10", "green", [ "h38.4", "v-9.6" ] ],
-    [ "lcd1:MOSI", "esp:11", "white", [ "h105.6", "v28.81" ] ],
-    [ "lcd1:SCK", "esp:12", "blue", [ "h76.8", "v48.01" ] ],
-    [ "lcd1:MISO", "esp:13", "red", [ "h57.6", "v76.81" ] ],
-    [ "btn1:2.l", "esp:GND.4", "black", [ "h-28.8", "v29" ] ],
-    [ "btn1:1.l", "esp:0", "green", [ "h-28.8", "v-38.4" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "lcd1:D/C", "esp:14", "purple", [ "v0" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "lcd1:CS", "esp:10", "green", [ "v0" ] ],
+    [ "lcd1:MOSI", "esp:11", "white", [ "v0" ] ],
+    [ "lcd1:SCK", "esp:12", "blue", [ "v0" ] ],
+    [ "lcd1:MISO", "esp:13", "red", [ "v0" ] ],
     [ "encoder1:GND", "esp:GND.2", "black", [ "h0" ] ],
     [ "encoder1:VCC", "esp:3V3.2", "red", [ "h67.2", "v67.6" ] ],
     [ "encoder1:CLK", "esp:4", "white", [ "h48", "v105.6" ] ],
