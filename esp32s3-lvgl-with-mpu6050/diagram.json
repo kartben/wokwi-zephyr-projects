@@ -35,5 +35,6 @@
     [ "lcd1:SCK", "esp:12", "blue", [ "v0" ] ],
     [ "lcd1:MISO", "esp:13", "red", [ "v0" ] ]
   ],
+  "serialMonitor": { "display": "terminal" },
   "dependencies": {}
 }
