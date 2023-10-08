@@ -2,6 +2,10 @@
 
 This repository contains a collection of Zephyr projects that have been pre-compiled for a variety of boards (ESP32-S3, ESP32-C3, and Raspberry Pi Pico) and that can be used with the [Wokwi VS Code extension](https://marketplace.visualstudio.com/items?itemName=Wokwi.wokwi-vscode).
 
+<p align="center">
+  <img src="./assets/wokwi.gif" title="Screencast of Wokwi running a Zephyr application" width="600px"/>
+</p>
+
 ## Usage
 
 1. Install the [Wokwi VS Code extension](https://marketplace.visualstudio.com/items?itemName=Wokwi.wokwi-vscode).
