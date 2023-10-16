@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Kirill Mikhailov [playfulFence]",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-c3-devkitm-1",
+      "id": "esp",
+      "top": -259.5,
+      "left": -157.38,
+      "attrs": {}
+    },
+    { "type": "wokwi-ili9341", "id": "lcd1", "top": -613.6, "left": -307.5, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:7", "lcd1:MOSI", "white", [ "h55.18", "v-105.6", "h-403.19" ] ],
+    [ "esp:10", "lcd1:CS", "green", [ "h0" ] ],
+    [ "esp:0", "lcd1:D/C", "purple", [ "h0" ] ],
+    [ "esp:6", "lcd1:SCK", "blue", [ "h64.78", "v-124.8", "h-201.59" ] ],
+    [ "esp:2", "lcd1:MISO", "red", [ "h0" ] ],
+    [ "esp:GND.1", "lcd1:GND", "black", [ "h0" ] ],
+    [ "esp:3V3.1", "lcd1:VCC", "limegreen", [ "h0" ] ]
+  ],
+  "serialMonitor": { "display": "terminal" },
+  "dependencies": {}
+}
